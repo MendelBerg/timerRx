@@ -1,19 +1,6 @@
 import React, { useState } from "react";
-import { Observable, interval } from "rxjs";
+import { interval } from "rxjs";
 import { Timer } from "./Timer.jsx";
-
-const interval2 = (i) =>
-  new Observable((observer) => {
-    const id = setInterval(() => {
-      observer.next(i);
-      i += 1;
-    }, 100);
-
-    return () => {
-      clearInterval(id);
-      observable = null;
-    };
-  });
 
 const observable = interval(100);
 
